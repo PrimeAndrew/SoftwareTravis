@@ -4,6 +4,7 @@ namespace Tests\Unit;
 
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Http\Controllers\ParkingController;
 
 class ExampleTest extends TestCase
 {
@@ -16,4 +17,11 @@ class ExampleTest extends TestCase
     {
         $this->assertTrue(true);
     }
+
+    /** @test */
+    function  TestIndexView (){
+        $test = new ParkingController();
+        $this->assertNotEmpty($test->index());
+    }
+
 }
