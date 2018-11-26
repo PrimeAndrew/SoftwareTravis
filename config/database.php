@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'testing'),
 
     /*
     |--------------------------------------------------------------------------
@@ -54,6 +54,19 @@ return [
             'prefix_indexes' => true,
             'strict' => true,
             'engine' => null,
+        ],
+
+        'testing' => [
+            'driver' => 'pgsql',
+            'host' => env('DB_HOST','127.0.0.1'),
+            'database' => env('DB_DATABASE', 'postgres'),
+            'username' => env('DB_USERNAME','postgres'),
+            'password' => env('DB_PASSWORD',''),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'schema' => 'public',
+            'sslmode' => 'prefer',
         ],
 
         'pgsql' => [
