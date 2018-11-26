@@ -13,6 +13,7 @@ before_script:
  - composer install --no-interaction
  - cp .env.travis .env
  - php artisan key:generate
+ - php artisan make:migration
 
 script:
  - vendor/bin/phpunit
