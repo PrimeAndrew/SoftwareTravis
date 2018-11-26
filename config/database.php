@@ -58,10 +58,10 @@ return [
 
         'testing' => [
             'driver' => 'pgsql',
-            'host' => env('127.0.0.1'),
-            'database' => env('postgres'),
-            'username' => env('postgres'),
-            'password' => env(''),
+            'host' => env('DB_HOST','127.0.0.1'),
+            'database' => env('DB_DATABASE', 'postgres'),
+            'username' => env('DB_USERNAME','postgres'),
+            'password' => env('DB_PASSWORD',''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
