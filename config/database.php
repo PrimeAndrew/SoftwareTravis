@@ -58,7 +58,7 @@ return [
 
         'testing' => [
             'driver' => 'pgsql',
-            'host' => env('localhost'),
+            'host' => env('127.0.0.1'),
             'database' => env('postgres'),
             'username' => env('postgres'),
             'password' => env('postgres'),
