@@ -14,7 +14,8 @@ class ParkingController extends Controller
      */
     public function index()
     {
-        //
+        $parkings =  Parking::orderBy('id','ASC')->paginate(2);
+        return view('parkings.index',compact('parkings'));
     }
 
     /**
