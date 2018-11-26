@@ -5,6 +5,9 @@ language: php
 php: 
  - '7.1.3'
 
+services:
+ - postgresql
+
 addons:
  - postgresql: "10.5"
 
