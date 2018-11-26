@@ -46,7 +46,7 @@ class ParkingController extends Controller
      */
     public function show(Parking $parking)
     {
-        //
+        // hola
     }
 
     /**
