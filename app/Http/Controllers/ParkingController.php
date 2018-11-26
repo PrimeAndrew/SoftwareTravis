@@ -71,7 +71,8 @@ class ParkingController extends Controller
      */
     public function edit(Parking $parking)
     {
-        //
+        return view('parkings.edit',compact('parking'));
+
     }
 
     /**
@@ -83,7 +84,18 @@ class ParkingController extends Controller
      */
     public function update(Request $request, Parking $parking)
     {
-        //
+        $request->validate([
+            'parking_name'=> 'required',
+            'parking_address' => 'required',
+            'total_spaces' => 'required',
+            'open_hour' => 'required',
+            'close_hour' => 'required',
+            'latitude' => 'required',
+            'longitud' => 'required',
+        ]);
+        $parking->update($request->all());
+        Session::flash('message','Parqueo actualizado correctamente');
+        return redirect()->route('parkings.index');
     }
 
     /**
@@ -94,6 +106,8 @@ class ParkingController extends Controller
      */
     public function destroy(Parking $parking)
     {
-        //
+        $parking->delete();
+        Session::flash('message','Parqueo borrado correctamente');
+        return redirect()->route('parkings.index');
     }
 }
