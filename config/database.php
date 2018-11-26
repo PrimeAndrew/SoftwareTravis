@@ -61,7 +61,7 @@ return [
             'host' => env('127.0.0.1'),
             'database' => env('postgres'),
             'username' => env('postgres'),
-            'password' => env('postgres'),
+            'password' => env(''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
