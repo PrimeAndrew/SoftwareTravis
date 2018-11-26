@@ -52,6 +52,7 @@
         "post-install-cmd": [
             "php artisan clear-compiled",
             "php artisan cache:clear ",
+            "php artisan make:migration",
             "chmod -R 777 public/"
         ]
     },
