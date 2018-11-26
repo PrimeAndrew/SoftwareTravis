@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Parking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ParkingController extends Controller
 {
@@ -25,7 +26,7 @@ class ParkingController extends Controller
      */
     public function create()
     {
-        //
+        return view('parkings.create');
     }
 
     /**
@@ -36,7 +37,18 @@ class ParkingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'parking_name'=> 'required',
+            'parking_address' => 'required',
+            'total_spaces' => 'required',
+            'open_hour' => 'required',
+            'close_hour' => 'required',
+            'latitude' => 'required',
+            'longitud' => 'required',
+        ]);
+        Parking::create($request->all());
+        Session::flash('message','Parqueo creado correctamente');
+        return redirect()->route('parkings.index');
     }
 
     /**
