@@ -28,7 +28,7 @@ class ProjectTest extends TestCase
     {
         $this->get('parkings')
             ->assertStatus(200)
-            ->assertSee('Parkings');
+            ->assertSee('hola');
     }
 
     /** @test */
